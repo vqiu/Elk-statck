@@ -1,0 +1,18 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - /var/log/nginx/access.log
+      
+      document_type: nginx-access
+  registry_file: /var/lib/filebeat/registry
+output:
+  logstash:
+    hosts: ["127.0.0.1:5044"]
+    bulk_max_size: 1024
+
+shipper:
+
+logging:
+  files:
+    rotateeverybytes: 10485760 # = 10MB
