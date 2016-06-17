@@ -8,7 +8,7 @@ filebeat:
   registry_file: /var/lib/filebeat/registry
 output:
   logstash:
-    hosts: ["127.0.0.1:5044"]
+    hosts: ["http://user:password@127.0.0.1:5044"]
     bulk_max_size: 1024
 
 shipper:
